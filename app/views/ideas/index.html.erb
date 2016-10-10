@@ -1,1 +1,16 @@
-<h1>This is my first app ever and I’m super excited to become a coder</h1>
+<%= simple_form_for Idea.new do |f| %>
+  <%= f.input :content %>
+  <%= f.input :author %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
+<% @ideas.each do |idea| %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <blockquote>
+        <p><%= idea.content %></p>
+        <small>by <%= idea.author %></small>
+    </blockquote> 
+  </div>
+</div>
+<% end %>
