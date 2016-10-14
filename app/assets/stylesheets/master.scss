@@ -1,11 +1,53 @@
-$primary-font: 'Open Sans', sans-serif;  
-$secondary-font: 'Dosis', sans-serif;
-$main-blue: #337ab7; 
-$footer-height: 20px;  
+$primary-font: 'Gloria Hallelujah', sans-serif;  
+$secondary-font: 'Dosis', sans-serif;  
+$footer-height: 45px;
+
+.navbar-inverse {
+  font-family: $secondary-font;
+  position: relative;
+  min-height: 65px;
+  margin-bottom: 85px;
+  border: 5px solid transparent;
+}
+
+.navbar-brand {
+  font-family: "Pacifico";
+  color: #000000;
+}
+.navbar-nav{
+  font-size: 18px;
+}
+
+.navbar-header .navbar-brand {
+  font-weight: 100; 
+  font-size: 35px;
+  letter-spacing: 2px;
+}
+
+.panel {
+  background-color: rgb(255,255,255);
+}
+
+.btn-block{
+  margin-bottom: 2px;
+}
+.btn-sm{
+    font-size: 15px;
+}
+
+.html, .body {
+    font-family: $primary-font;
+}
+
+/* Styles go here */
+
+/* Sticky footer styles
+-------------------------------------------------- */
 
 html,
 body {
   height: 100%;
+  background-color:	#DCDCDC;
   /* The html and body elements cannot have any padding or margin. */
 }
 
@@ -21,26 +63,5 @@ body {
 
 /* Set the fixed height of the footer here */
 .footer {
-  height: 45px;
-}
-.navbar-header{
-  margin: 20px;
-}
-.container{
-  padding:50px;
-}
-.navbar-default {
-  font-family: $secondary-font;
-  background-color: white;
-  margin : 20px;
-}
-.navbar-default .navbar-brand {
-  font-weight: 100;
-  font-size: 30px;
-  letter-spacing: 2px;
-  color: $main-blue;
-}
-
-.footer text-center{
-  background-color:rgba(255,0,0,0.5);
+  height: $footer-height;
 }

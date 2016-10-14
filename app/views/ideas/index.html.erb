@@ -1,6 +1,6 @@
 <div class="modal-body">
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Idea
+<button type="button" class="btn-block btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Post an Idea
 </button>
 
 
@@ -15,7 +15,7 @@
         <div class="modal-body">
           <%= f.input :content %>
           <%= f.input :author %>
-        </div>      
+        </div> 
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <%= f.submit 'Submit', class: 'btn btn-primary' %>
@@ -27,12 +27,20 @@
 </div>  
 
 <% @ideas.each do |idea| %>
-<div class="panel panel-default">
-  <div class="panel-body">
-    <blockquote>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <blockquote>
         <p><%= idea.content %></p>
         <small>by <%= idea.author %></small>
-    </blockquote> 
+      </blockquote>
+      <div class="btn" >
+        <%= link_to 'Delete', idea_path(idea), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+        <%= link_to 'Revise', edit_idea_path(idea), class: 'btn btn-sm btn-success' %>
+      </div>
+    </div>
   </div>
-</div>
 <% end %>
+
+<div class = "text-center">
+  <%= will_paginate @ideas %>
+</div>
